@@ -247,6 +247,14 @@ input[type="submit"],
   color: white;
 }
 
+.search-form__label:focus {
+  outline: solid 2px white;
+}
+
+.search-form__label:active {
+  outline: none;
+}
+
 .search-form__checkbox-list {
   display: flex;
   flex-wrap: wrap;
