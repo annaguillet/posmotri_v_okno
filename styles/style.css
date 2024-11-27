@@ -47,16 +47,6 @@ input[type="submit"],
   cursor: pointer;
 }
 
-.visually-hidden {
-  position: absolute;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  inline-size: 1px;
-  block-size: 1px;
-  clip-path: inset(50%);
-  white-space: nowrap;
-}
-
 .content {
   display: flex;
   justify-content: space-between;
@@ -192,21 +182,44 @@ input[type="submit"],
   inline-size: 100%;
 }
 
+.visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  inline-size: 1px;
+  block-size: 1px;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
 .search-form__fieldset {
   border: none;
+}
+
+.search-form__textfield {
+  min-width: 225px;
+  border: 1px solid #fff;
+  border-right: transparent;
+  border-left: transparent;
+  color: white;
+  font-family: "Fira Sans Condensed", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  background-color: transparent;
+  appearance: none;
+}
+
+.search-form__textfield:focus-visible {
+  outline: 1px solid #fff;
+  outline-offset: 1px;
 }
 
 .search-form__textfield:focus {
   outline: none;
 }
 
-.search-form__label:has(.search-form__textfield:focus-visible) {
-  outline: 1px solid #fff;
-  outline-offset: 1px;
-}
-
-.search-form__label:has(.search-form__textfield:focus) {
-  outline: none;
+.search-form__textfield:active {
+  border: 1px solid #fff;
 }
 
 .search-form__fieldset:hover {
@@ -225,19 +238,6 @@ input[type="submit"],
   line-height: 90%;
 }
 
-.search-form__textfield {
-  min-width: 225px;
-  border: 1px solid #fff;
-  border-right: transparent;
-  border-left: transparent;
-  color: white;
-  font-family: "Fira Sans Condensed", sans-serif;
-  font-weight: 400;
-  font-size: 18px;
-  background-color: transparent;
-  appearance: none;
-}
-
 .search-form__label {
   display: flex;
   flex-direction: row;
@@ -245,14 +245,6 @@ input[type="submit"],
   gap: 5px;
   width: fit-content;
   color: white;
-}
-
-.search-form__label:focus {
-  outline: solid 2px white;
-}
-
-.search-form__label:active {
-  outline: none;
 }
 
 .search-form__checkbox-list {
@@ -283,6 +275,10 @@ input[type="checkbox"]:checked + .search-form__pseudo-checkbox::after {
 
 .search-form__checkbox-list > .search-form__label:hover {
   text-decoration: underline;
+}
+
+.search-form__label-text:focus-visible {
+  outline: none;
 }
 
 input[type="checkbox"]:focus-visible + .search-form__pseudo-checkbox {
